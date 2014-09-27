@@ -1,0 +1,32 @@
+D:\Users\Graeme\Dropbox\Programming\BT Notes\trunk\Notepad\bin\Debug\Notepad.exe.config
+D:\Users\Graeme\Dropbox\Programming\BT Notes\trunk\Notepad\bin\Debug\Notepad.exe
+D:\Users\Graeme\Dropbox\Programming\BT Notes\trunk\Notepad\bin\Debug\Notepad.pdb
+D:\Users\Graeme\Dropbox\Programming\BT Notes\trunk\Notepad\obj\x86\Debug\Notepad.Forms.About.resources
+D:\Users\Graeme\Dropbox\Programming\BT Notes\trunk\Notepad\obj\x86\Debug\FileDialogExtenders.FileDialogControlBase.resources
+D:\Users\Graeme\Dropbox\Programming\BT Notes\trunk\Notepad\obj\x86\Debug\Notepad.Forms.FindDialog.resources
+D:\Users\Graeme\Dropbox\Programming\BT Notes\trunk\Notepad\obj\x86\Debug\Notepad.SaveOpenDialog.resources
+D:\Users\Graeme\Dropbox\Programming\BT Notes\trunk\Notepad\obj\x86\Debug\Notepad.Properties.Resources.resources
+D:\Users\Graeme\Dropbox\Programming\BT Notes\trunk\Notepad\obj\x86\Debug\Notepad.Forms.ReplaceDialog.resources
+D:\Users\Graeme\Dropbox\Programming\BT Notes\trunk\Notepad\obj\x86\Debug\Notepad.csproj.GenerateResource.Cache
+D:\Users\Graeme\Dropbox\Programming\BT Notes\trunk\Notepad\obj\x86\Debug\Notepad.exe
+D:\Users\Graeme\Dropbox\Programming\BT Notes\trunk\Notepad\obj\x86\Debug\Notepad.pdb
+C:\Users\Bob-Haddow\Documents\Visual Studio 2012\Projects\BTNotes\trunk\Notepad\bin\Debug\Notepad.exe.config
+C:\Users\Bob-Haddow\Documents\Visual Studio 2012\Projects\BTNotes\trunk\Notepad\obj\x86\Debug\Notepad.exe
+C:\Users\Bob-Haddow\Documents\Visual Studio 2012\Projects\BTNotes\trunk\Notepad\obj\x86\Debug\Notepad.pdb
+C:\Users\Bob-Haddow\Documents\Visual Studio 2012\Projects\BTNotes\trunk\Notepad\obj\x86\Debug\Notepad.csprojResolveAssemblyReference.cache
+C:\Users\Bob-Haddow\Documents\Visual Studio 2012\Projects\BTNotes\trunk\Notepad\obj\x86\Debug\Notepad.Forms.About.resources
+C:\Users\Bob-Haddow\Documents\Visual Studio 2012\Projects\BTNotes\trunk\Notepad\obj\x86\Debug\FileDialogExtenders.FileDialogControlBase.resources
+C:\Users\Bob-Haddow\Documents\Visual Studio 2012\Projects\BTNotes\trunk\Notepad\obj\x86\Debug\Notepad.Forms.FindDialog.resources
+C:\Users\Bob-Haddow\Documents\Visual Studio 2012\Projects\BTNotes\trunk\Notepad\obj\x86\Debug\Notepad.Forms.GoToLinePrompt.resources
+C:\Users\Bob-Haddow\Documents\Visual Studio 2012\Projects\BTNotes\trunk\Notepad\obj\x86\Debug\Notepad.Forms.Notepad.resources
+C:\Users\Bob-Haddow\Documents\Visual Studio 2012\Projects\BTNotes\trunk\Notepad\obj\x86\Debug\Notepad.SaveOpenDialog.resources
+C:\Users\Bob-Haddow\Documents\Visual Studio 2012\Projects\BTNotes\trunk\Notepad\obj\x86\Debug\Notepad.Properties.Resources.resources
+C:\Users\Bob-Haddow\Documents\Visual Studio 2012\Projects\BTNotes\trunk\Notepad\obj\x86\Debug\Notepad.Forms.ReplaceDialog.resources
+C:\Users\Bob-Haddow\Documents\Visual Studio 2012\Projects\BTNotes\trunk\Notepad\obj\x86\Debug\Notepad.Forms.SaveChangesPrompt.resources
+C:\Users\Bob-Haddow\Documents\Visual Studio 2012\Projects\BTNotes\trunk\Notepad\obj\x86\Debug\Notepad.csproj.GenerateResource.Cache
+C:\Users\Bob-Haddow\Documents\Visual Studio 2012\Projects\BTNotes\trunk\Notepad\bin\Debug\Notepad.exe
+C:\Users\Bob-Haddow\Documents\Visual Studio 2012\Projects\BTNotes\trunk\Notepad\bin\Debug\Notepad.pdb
+D:\Users\Graeme\Dropbox\Programming\BT Notes\trunk\Notepad\obj\x86\Debug\Notepad.csprojResolveAssemblyReference.cache
+D:\Users\Graeme\Dropbox\Programming\BT Notes\trunk\Notepad\obj\x86\Debug\Notepad.Forms.GoToLineDialog.resources
+D:\Users\Graeme\Dropbox\Programming\BT Notes\trunk\Notepad\obj\x86\Debug\Notepad.Forms.Notepad.resources
+D:\Users\Graeme\Dropbox\Programming\BT Notes\trunk\Notepad\obj\x86\Debug\Notepad.Forms.SavePrompt.resources
