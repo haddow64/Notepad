@@ -25,7 +25,7 @@ namespace Notepad.Forms
         {
             if (textBoxLineNumber.Text.IsEmpty())
             {
-                MessageBox.Show(this, "You must enter a value.", "Notepad - Goto Line");
+                MessageBox.Show(this, @"You must enter a value.", @"Notepad - Goto Line");
                 return;
             }
            
@@ -33,8 +33,8 @@ namespace Notepad.Forms
 
             if (potentialLineNumber == 0)
             {
-                MessageBox.Show(this, "Zero (0) is not a valid line number, line numbers start at 1.",
-                    "Notepad - Goto Line");
+                MessageBox.Show(this, @"Zero (0) is not a valid line number, line numbers start at 1.",
+                    @"Notepad - Goto Line");
                 return;
             }
 
@@ -45,12 +45,11 @@ namespace Notepad.Forms
 
         private void controlLineNumberTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar))
-            {
-                var Sender = (TextBox) sender;
-                controlToolTip.Show("You can only type a number here.", Sender);
-                e.Handled = true;
-            }
+            if (char.IsDigit(e.KeyChar)) return;
+
+            var senderBox = (TextBox) sender;
+            controlToolTip.Show("You can only type a number here.", senderBox);
+            e.Handled = true;
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)

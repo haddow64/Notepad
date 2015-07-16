@@ -23,7 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(About));
+            var resources = new System.ComponentModel.ComponentResourceManager(typeof(About));
             this.labelTitle = new System.Windows.Forms.Label();
             this.buttonOk = new System.Windows.Forms.Button();
             this.labelSubTitle = new System.Windows.Forms.Label();

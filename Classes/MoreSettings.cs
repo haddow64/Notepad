@@ -21,7 +21,6 @@ namespace Notepad.Properties
 
                 return moreSettings;
             }
-            set { this["MoreSettings"] = value; }
         }
     }
 }

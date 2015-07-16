@@ -58,7 +58,7 @@ namespace FileDialogExtenders
             if (m_places == null)
                 m_places = new object[places.GetLength(0)];
 
-            for (int i = 0; i < m_places.GetLength(0); i++)
+            for (var i = 0; i < m_places.GetLength(0); i++)
             {
                 m_places[i] = places[i];
             }
@@ -100,8 +100,8 @@ namespace FileDialogExtenders
 
                 // at this point, m_TempKeyName equals places key
                 // write dynamic places here reading from Places
-                RegistryKey reg = Registry.CurrentUser.CreateSubKey(Key_PlacesBar);
-                for (int i = 0; i < m_places.GetLength(0); i++)
+                var reg = Registry.CurrentUser.CreateSubKey(Key_PlacesBar);
+                for (var i = 0; i < m_places.GetLength(0); i++)
                 {
                     if (m_places[i] != null)
                     {

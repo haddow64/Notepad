@@ -95,12 +95,12 @@ namespace FileDialogExtenders
                 switch ((Msg)m.Msg)
                 {
                     case Msg.WM_NOTIFY:
-                        OFNOTIFY ofNotify = (OFNOTIFY)Marshal.PtrToStructure(m.LParam, typeof(OFNOTIFY));
+                        var ofNotify = (OFNOTIFY)Marshal.PtrToStructure(m.LParam, typeof(OFNOTIFY));
                         switch (ofNotify.hdr.code)
                         {
                             case (uint)DialogChangeStatus.CDN_SELCHANGE:
                                 {
-                                    StringBuilder filePath = new StringBuilder(256);
+                                    var filePath = new StringBuilder(256);
                                     NativeMethods.SendMessage(new HandleRef(this, NativeMethods.GetParent(Handle)), (uint)DialogChangeProperties.CDM_GETFILEPATH, (IntPtr)256, filePath);
                                     if (_CustomCtrl != null)
                                     {
@@ -110,7 +110,7 @@ namespace FileDialogExtenders
                                 break;
                             case (uint)DialogChangeStatus.CDN_FOLDERCHANGE:
                                 {
-                                    StringBuilder folderPath = new StringBuilder(256);
+                                    var folderPath = new StringBuilder(256);
                                     NativeMethods.SendMessage(new HandleRef(this, NativeMethods.GetParent(Handle)), (int)DialogChangeProperties.CDM_GETFOLDERPATH, (IntPtr)256, folderPath);
                                     if (_CustomCtrl != null)
                                         _CustomCtrl.OnFolderNameChanged(this, folderPath.ToString());
@@ -118,8 +118,8 @@ namespace FileDialogExtenders
                                 break;
                             case (uint)DialogChangeStatus.CDN_TYPECHANGE:
                                 {
-                                    OPENFILENAME ofn = (OPENFILENAME)Marshal.PtrToStructure(ofNotify.OpenFileName, typeof(OPENFILENAME));
-                                    int i = ofn.nFilterIndex;
+                                    var ofn = (OPENFILENAME)Marshal.PtrToStructure(ofNotify.OpenFileName, typeof(OPENFILENAME));
+                                    var i = ofn.nFilterIndex;
                                     if (_CustomCtrl != null && _filterIndex != i)
                                     {
                                         _filterIndex = i;
@@ -308,9 +308,9 @@ namespace FileDialogExtenders
 
             private bool FileDialogEnumWindowCallBack(IntPtr hwnd, int lParam)
             {
-                StringBuilder className = new StringBuilder(256);
+                var className = new StringBuilder(256);
                 NativeMethods.GetClassName(new HandleRef(this,hwnd), className, className.Capacity);
-                int controlID = NativeMethods.GetDlgCtrlID(hwnd);
+                var controlID = NativeMethods.GetDlgCtrlID(hwnd);
                 WINDOWINFO windowInfo;
                 NativeMethods.GetWindowInfo(new HandleRef(this,hwnd), out windowInfo);
 
@@ -428,7 +428,7 @@ namespace FileDialogExtenders
             //this is a child window for the whole Dialog
             protected override void WndProc(ref Message m)
             {
-                RECT currentSize = new RECT();
+                var currentSize = new RECT();
                 const SetWindowPosFlags flags = SetWindowPosFlags.SWP_NOZORDER | SetWindowPosFlags.SWP_NOMOVE ;//| SetWindowPosFlags.SWP_NOREPOSITION | SetWindowPosFlags.SWP_ASYNCWINDOWPOS | SetWindowPosFlags.SWP_SHOWWINDOW | SetWindowPosFlags.SWP_DRAWFRAME;
                 switch ((Msg)m.Msg)
                 {
@@ -436,14 +436,14 @@ namespace FileDialogExtenders
                         InitControls();
                         NativeMethods.GetWindowRect(new HandleRef(this,_hFileDialogHandle), ref currentSize);
                         //restore original sizes
-                        int top = (_CustomControl.Parent == null) ? currentSize.top : _CustomControl.Parent.Top;
-                        int right = (_CustomControl.Parent == null) ? currentSize.right : _CustomControl.Parent.Right;
-                        RECT currentClientSize = new RECT();
+                        var top = (_CustomControl.Parent == null) ? currentSize.top : _CustomControl.Parent.Top;
+                        var right = (_CustomControl.Parent == null) ? currentSize.right : _CustomControl.Parent.Right;
+                        var currentClientSize = new RECT();
                         NativeMethods.GetClientRect(new HandleRef(this,_hFileDialogHandle), ref currentClientSize);
-                        int dy = (int)(currentSize.Height - currentClientSize.Height);
-                        int dx = (int)(currentSize.Width - currentClientSize.Width);
-                        int Height = 0;
-                        int Width = 0;
+                        var dy = (int)(currentSize.Height - currentClientSize.Height);
+                        var dx = (int)(currentSize.Width - currentClientSize.Width);
+                        var Height = 0;
+                        var Width = 0;
                         switch (_CustomControl.FileDlgStartLocation)
                         {
                             case AddonWindowLocation.Bottom:
@@ -502,7 +502,7 @@ namespace FileDialogExtenders
                             if (!mInitializated && !mResized)
                             {
                                 // Resize OpenDialog to make fit our extra form
-                                WINDOWPOS pos = (WINDOWPOS)Marshal.PtrToStructure(m.LParam, typeof(WINDOWPOS));
+                                var pos = (WINDOWPOS)Marshal.PtrToStructure(m.LParam, typeof(WINDOWPOS));
                                 if (pos.flags != 0 && ((pos.flags & (int)SWP_Flags.SWP_NOSIZE) != (int)SWP_Flags.SWP_NOSIZE))
                                 {
                                     switch (_CustomControl.FileDlgStartLocation)

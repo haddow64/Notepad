@@ -11,18 +11,14 @@ using Win32Types;
 namespace Notepad.Forms
 {
     /// <summary>
-    /// 
-    /// C# implementation of Notepad based on the Windows Notepad
-    /// Based upon examples:
-    /// http://www.codeproject.com/Articles/7313/Notepad-Application-in-C
-    /// http://www.sourcecodester.com/tutorials/c/6562/simple-notepad-application-using-c-part-2.html
-    /// 
-    /// Author:     Graeme Haddow
-    /// https://github.com/haddow64
-    /// 
-    /// Using FileDlgExtenders - gustavo_franco@hotmail.com
-    /// Available from: https://github.com/NoxHarmonium/enform/tree/master/CustomOpenFile/FileDlgExtenders
-    /// 
+    ///     C# implementation of Notepad based on the Windows Notepad
+    ///     Based upon examples:
+    ///     http://www.codeproject.com/Articles/7313/Notepad-Application-in-C
+    ///     http://www.sourcecodester.com/tutorials/c/6562/simple-notepad-application-using-c-part-2.html
+    ///     Author:     Graeme Haddow
+    ///     https://github.com/haddow64
+    ///     Using FileDlgExtenders - gustavo_franco@hotmail.com
+    ///     Available from: https://github.com/NoxHarmonium/enform/tree/master/CustomOpenFile/FileDlgExtenders
     /// </summary>
     public partial class Notepad : Form
     {
@@ -40,11 +36,10 @@ namespace Notepad.Forms
         {
             InitializeComponent();
 
-            if (!Settings.WindowPosition.IsEmpty)
-            {
-                Bounds = Settings.WindowPosition;
-                StartPosition = FormStartPosition.Manual;
-            }
+            if (Settings.WindowPosition.IsEmpty) return;
+
+            Bounds = Settings.WindowPosition;
+            StartPosition = FormStartPosition.Manual;
         }
 
         private string Filename
@@ -57,10 +52,7 @@ namespace Notepad.Forms
             }
         }
 
-        private string DocName
-        {
-            get { return Filename == null ? "Untitled" : Path.GetFileName(Filename); }
-        }
+        private string DocName => Filename == null ? "Untitled" : Path.GetFileName(Filename);
 
         public string Content
         {
@@ -84,10 +76,7 @@ namespace Notepad.Forms
             set { menuitemFormatWordWrap.Checked = controlContentTextBox.WordWrap = value; }
         }
 
-        private static Settings Settings
-        {
-            get { return Settings.Default; }
-        }
+        private static Settings Settings => Settings.Default;
 
         private Font CurrentFont
         {
@@ -123,7 +112,7 @@ namespace Notepad.Forms
                     {
                         var pageSettings = new PageSettings
                         {
-                            Margins = new Margins(75, 75, 100, 100),
+                            Margins = new Margins(75, 75, 100, 100)
                         };
 
                         _pageSettings = pageSettings;
@@ -149,10 +138,7 @@ namespace Notepad.Forms
             }
         }
 
-        private ContentPosition CaretPosition
-        {
-            get { return CharIndexToPosition(SelectionStart); }
-        }
+        private ContentPosition CaretPosition => CharIndexToPosition(SelectionStart);
 
         private int LineIndex
         {
@@ -183,11 +169,7 @@ namespace Notepad.Forms
             }
         }
 
-        private int SelectionEnd
-        {
-            get { return SelectionStart + SelectionLength; }
-        }
-
+        private int SelectionEnd => SelectionStart + SelectionLength;
 
         private int SelectionStart
         {
@@ -219,10 +201,10 @@ namespace Notepad.Forms
         {
             if (Tag == null)
             {
-                Tag = base.Text;
+                Tag = Text;
             }
 
-            base.Text = ((string) Tag).FormatUsingObject(new {docName = DocName});
+            Text = ((string) Tag).FormatUsingObject(new {docName = DocName});
         }
 
         private void controlContentTextBox_TextChanged(object sender, EventArgs e)
@@ -335,7 +317,7 @@ namespace Notepad.Forms
                 if (!fileExists)
                 {
                     // ReSharper disable LocalizableElement
-                    DialogResult result = MessageBox.Show("Cannot find the {Filename} file. Do you want to create a new file?", 
+                    var result = MessageBox.Show("Cannot find the {Filename} file. Do you want to create a new file?",
                         "Notepad", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
                     // ReSharper restore LocalizableElement
 
@@ -408,7 +390,7 @@ namespace Notepad.Forms
         {
             if (!IsDirty) return true;
 
-            DialogResult dialogResult = new SavePrompt(Filename).ShowDialog(this);
+            var dialogResult = new SavePrompt(Filename).ShowDialog(this);
 
             switch (dialogResult)
             {
@@ -462,9 +444,9 @@ namespace Notepad.Forms
 
             var remainingContentToPrint = Content;
 
-            #pragma warning disable 219
+#pragma warning disable 219
             var pageIndex = 0;
-            #pragma warning restore 219
+#pragma warning restore 219
 
             printdoc.PrintPage += (sender, e) =>
             {
@@ -592,7 +574,7 @@ namespace Notepad.Forms
             controlCaretPositionLabel.Text = ((string) controlCaretPositionLabel.Tag).FormatUsingObject(new
             {
                 LineNumber = CaretPosition.LineIndex + 1,
-                ColumnNumber = CaretPosition.ColumnIndex + 1,
+                ColumnNumber = CaretPosition.ColumnIndex + 1
             });
         }
 
@@ -610,12 +592,12 @@ namespace Notepad.Forms
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {
-                var docPath = (string[])e.Data.GetData(DataFormats.FileDrop);
+                var docPath = (string[]) e.Data.GetData(DataFormats.FileDrop);
                 if (File.Exists(docPath[0]))
                 {
                     try
                     {
-                        var files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                        var files = (string[]) e.Data.GetData(DataFormats.FileDrop);
                         if (files != null && files.Length != 0)
                         {
                             controlContentTextBox.Text = files[0];
@@ -675,7 +657,7 @@ namespace Notepad.Forms
 
         public bool FindAndSelect(string pSearchText, bool pMatchCase, bool pSearchDown)
         {
-            StringComparison eStringComparison = pMatchCase
+            var eStringComparison = pMatchCase
                 ? StringComparison.CurrentCulture
                 : StringComparison.CurrentCultureIgnoreCase;
 

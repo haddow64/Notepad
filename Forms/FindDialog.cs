@@ -47,7 +47,7 @@ namespace Notepad.Forms
 
             if (!_main.FindAndSelect(searchText, matchCase, bSearchDown))
             {
-                MessageBox.Show(this, string.Format("Cannot find {0}", searchText), "Notepad");
+                MessageBox.Show(this, string.Format("Cannot find {0}", searchText), @"Notepad");
             }
         }
 
@@ -58,8 +58,8 @@ namespace Notepad.Forms
 
         private void controlTextBox_Enter(object sender, EventArgs e)
         {
-            var Sender = (TextBox) sender;
-            Sender.SelectAll();
+            var senderBox = (TextBox) sender;
+            senderBox.SelectAll();
         }
 
         public new void Show(IWin32Window window = null)

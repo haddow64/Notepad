@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
 using Notepad.Classes;
@@ -18,14 +17,14 @@ namespace Notepad.Forms
 
         private void controlFindWhatTextBox_Enter(object sender, EventArgs e)
         {
-            var Sender = (TextBox) sender;
-            Sender.SelectAll();
+            var senderBox = (TextBox) sender;
+            senderBox.SelectAll();
         }
 
         private void controlReplaceWithTextBox_Enter(object sender, EventArgs e)
         {
-            var Sender = (TextBox) sender;
-            Sender.SelectAll();
+            var senderBox = (TextBox) sender;
+            senderBox.SelectAll();
         }
 
         private void controlFindWhatTextBox_TextChanged(object sender, EventArgs e)
@@ -69,7 +68,7 @@ namespace Notepad.Forms
 
             if (!_main.FindAndSelect(searchText, matchCase, bSearchDown))
             {
-                MessageBox.Show(this, string.Format("Cannot find {0}", searchText), "Notepad");
+                MessageBox.Show(this, string.Format("Cannot find {0}", searchText), @"Notepad");
             }
         }
 
@@ -86,7 +85,7 @@ namespace Notepad.Forms
 
             if (!_main.FindAndSelect(searchText, matchCase, true))
             {
-                MessageBox.Show(this, string.Format("Cannot find {0}", searchText), "Notepad");
+                MessageBox.Show(this, string.Format("Cannot find {0}", searchText), @"Notepad");
             }
         }
 

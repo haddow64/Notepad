@@ -23,7 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SavePrompt));
+            var resources = new System.ComponentModel.ComponentResourceManager(typeof(SavePrompt));
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonDontSave = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();

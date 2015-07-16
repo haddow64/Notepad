@@ -24,7 +24,7 @@
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GoToLineDialog));
+            var resources = new System.ComponentModel.ComponentResourceManager(typeof(GoToLineDialog));
             this.labelLineNumber = new System.Windows.Forms.Label();
             this.textBoxLineNumber = new System.Windows.Forms.TextBox();
             this.buttonGo = new System.Windows.Forms.Button();

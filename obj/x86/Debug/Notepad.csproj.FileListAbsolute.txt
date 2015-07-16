@@ -30,3 +30,19 @@ D:\Users\Graeme\Dropbox\Programming\BT Notes\trunk\Notepad\obj\x86\Debug\Notepad
 D:\Users\Graeme\Dropbox\Programming\BT Notes\trunk\Notepad\obj\x86\Debug\Notepad.Forms.GoToLineDialog.resources
 D:\Users\Graeme\Dropbox\Programming\BT Notes\trunk\Notepad\obj\x86\Debug\Notepad.Forms.Notepad.resources
 D:\Users\Graeme\Dropbox\Programming\BT Notes\trunk\Notepad\obj\x86\Debug\Notepad.Forms.SavePrompt.resources
+C:\Users\Bob-Haddow\Documents\GitHub\Notepad\bin\Debug\Notepad.exe.config
+C:\Users\Bob-Haddow\Documents\GitHub\Notepad\obj\x86\Debug\Notepad.exe
+C:\Users\Bob-Haddow\Documents\GitHub\Notepad\obj\x86\Debug\Notepad.pdb
+C:\Users\Bob-Haddow\Documents\GitHub\Notepad\bin\Debug\Notepad.exe
+C:\Users\Bob-Haddow\Documents\GitHub\Notepad\bin\Debug\Notepad.pdb
+C:\Users\Bob-Haddow\Documents\GitHub\Notepad\obj\x86\Debug\Notepad.csprojResolveAssemblyReference.cache
+C:\Users\Bob-Haddow\Documents\GitHub\Notepad\obj\x86\Debug\Notepad.Forms.About.resources
+C:\Users\Bob-Haddow\Documents\GitHub\Notepad\obj\x86\Debug\FileDialogExtenders.FileDialogControlBase.resources
+C:\Users\Bob-Haddow\Documents\GitHub\Notepad\obj\x86\Debug\Notepad.Forms.FindDialog.resources
+C:\Users\Bob-Haddow\Documents\GitHub\Notepad\obj\x86\Debug\Notepad.Forms.GoToLineDialog.resources
+C:\Users\Bob-Haddow\Documents\GitHub\Notepad\obj\x86\Debug\Notepad.Forms.Notepad.resources
+C:\Users\Bob-Haddow\Documents\GitHub\Notepad\obj\x86\Debug\Notepad.SaveOpenDialog.resources
+C:\Users\Bob-Haddow\Documents\GitHub\Notepad\obj\x86\Debug\Notepad.Properties.Resources.resources
+C:\Users\Bob-Haddow\Documents\GitHub\Notepad\obj\x86\Debug\Notepad.Forms.ReplaceDialog.resources
+C:\Users\Bob-Haddow\Documents\GitHub\Notepad\obj\x86\Debug\Notepad.Forms.SavePrompt.resources
+C:\Users\Bob-Haddow\Documents\GitHub\Notepad\obj\x86\Debug\Notepad.csproj.GenerateResource.Cache

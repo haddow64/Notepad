@@ -26,16 +26,13 @@ namespace Notepad.Classes
 
         public static string FormatUsingObject(this string @this, object poObject)
         {
-            return TypeDescriptor.GetProperties(poObject)
-                .Cast<PropertyDescriptor>()
-                .Aggregate(@this,
-                    (current, oProperty) =>
-                        current.Replace("{" + oProperty.Name + "}", oProperty.GetValue(poObject).ToStringOrNull()));
+            return TypeDescriptor.GetProperties(poObject).Cast<PropertyDescriptor>().Aggregate(@this,
+                    (current, oProperty) => current.Replace("{" + oProperty.Name + "}", oProperty.GetValue(poObject).ToStringOrNull()));
         }
 
         private static string ToStringOrNull(this object @this)
         {
-            return @this == null ? null : @this.ToString();
+            return @this?.ToString();
         }
 
         public static bool IsEmpty(this string @this)

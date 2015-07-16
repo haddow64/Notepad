@@ -267,30 +267,30 @@ namespace FileDialogExtenders {
         public void SortViewByColumn(int index) {
             try {
                 //handle of the "defView" --> container of the listView  
-                IntPtr hWndWin = NativeMethods.FindWindowEx(_dlgWrapper.Handle, IntPtr.Zero, "SHELLDLL_DefView", "");
+                var hWndWin = NativeMethods.FindWindowEx(_dlgWrapper.Handle, IntPtr.Zero, "SHELLDLL_DefView", "");
 
                 if (hWndWin != IntPtr.Zero) {
                     //change to details view
                     NativeMethods.SendMessage(new HandleRef(this, hWndWin), (int)Msg.WM_COMMAND, (IntPtr)(int)DefaultViewType.Details, IntPtr.Zero);
 
                     #region  sort by date
-                    int HDN_FIRST = (-300);
-                    int HDN_ITEMCLICKW = (HDN_FIRST - 22);
+                    var HDN_FIRST = (-300);
+                    var HDN_ITEMCLICKW = (HDN_FIRST - 22);
 
                     //get the ListView//s hWnd
-                    IntPtr hWndLV = NativeMethods.FindWindowEx(hWndWin, IntPtr.Zero, "SysListView32", IntPtr.Zero);
+                    var hWndLV = NativeMethods.FindWindowEx(hWndWin, IntPtr.Zero, "SysListView32", IntPtr.Zero);
                     //get the ColumnHeaders hWnd
-                    IntPtr hWndColHd = NativeMethods.FindWindowEx(hWndLV, IntPtr.Zero, "SysHeader32", IntPtr.Zero);
+                    var hWndColHd = NativeMethods.FindWindowEx(hWndLV, IntPtr.Zero, "SysHeader32", IntPtr.Zero);
 
                     //now click on column 3 to sort for date
-                    NMHEADER NMH = new NMHEADER();
+                    var NMH = new NMHEADER();
                     NMH.hdr.hwndFrom = hWndColHd;
                     NMH.hdr.code = (uint)HDN_ITEMCLICKW;
                     NMH.iItem = index;
                     NMH.iButton = 0;
 
                     // Initialize unmanged memory to hold the struct.
-                    IntPtr ptrNMH = Marshal.AllocHGlobal(Marshal.SizeOf(NMH));
+                    var ptrNMH = Marshal.AllocHGlobal(Marshal.SizeOf(NMH));
                     try {
 
                         // Copy the struct to unmanaged memory.
@@ -363,7 +363,7 @@ namespace FileDialogExtenders {
 
         protected override void OnPaint(PaintEventArgs e) {
             if (DesignMode) {
-                Graphics gr = e.Graphics;
+                var gr = e.Graphics;
                 {
                     HatchBrush hb = null;
                     Pen p = null;
@@ -421,11 +421,11 @@ namespace FileDialogExtenders {
         }
 
         public DialogResult ShowDialog(IWin32Window owner) {
-            DialogResult returnDialogResult = DialogResult.Cancel;
+            var returnDialogResult = DialogResult.Cancel;
             if (IsDisposed)
                 return returnDialogResult;
             if (owner == null || owner.Handle == IntPtr.Zero) {
-                WindowWrapper wr = new WindowWrapper(Process.GetCurrentProcess().MainWindowHandle);
+                var wr = new WindowWrapper(Process.GetCurrentProcess().MainWindowHandle);
                 owner = wr;
             }
             OriginalCtrlSize = Size;
@@ -435,7 +435,7 @@ namespace FileDialogExtenders {
             if (!_hasRunInitMSDialog)
                 InitMSDialog();
             try {
-                PropertyInfo AutoUpgradeInfo = MSDialog.GetType().GetProperty("AutoUpgradeEnabled");
+                var AutoUpgradeInfo = MSDialog.GetType().GetProperty("AutoUpgradeEnabled");
                 if (AutoUpgradeInfo != null)
                     AutoUpgradeInfo.SetValue(MSDialog, false, null);
                 returnDialogResult = _MSdialog.ShowDialog(owner);
@@ -450,11 +450,11 @@ namespace FileDialogExtenders {
         }
 
         internal DialogResult ShowDialogExt(FileDialog fdlg, IWin32Window owner) {
-            DialogResult returnDialogResult = DialogResult.Cancel;
+            var returnDialogResult = DialogResult.Cancel;
             if (IsDisposed)
                 return returnDialogResult;
             if (owner == null || owner.Handle == IntPtr.Zero) {
-                WindowWrapper wr = new WindowWrapper(Process.GetCurrentProcess().MainWindowHandle);
+                var wr = new WindowWrapper(Process.GetCurrentProcess().MainWindowHandle);
                 owner = wr;
             }
             OriginalCtrlSize = Size;
@@ -462,7 +462,7 @@ namespace FileDialogExtenders {
             _dlgWrapper = new WholeDialogWrapper(this);
 
             try {
-                PropertyInfo AutoUpgradeInfo = MSDialog.GetType().GetProperty("AutoUpgradeEnabled");
+                var AutoUpgradeInfo = MSDialog.GetType().GetProperty("AutoUpgradeEnabled");
                 if (AutoUpgradeInfo != null)
                     AutoUpgradeInfo.SetValue(MSDialog, false, null);
                 returnDialogResult = _MSdialog.ShowDialog(owner);
